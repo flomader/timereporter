@@ -1,3 +1,68 @@
 body {
-    min-width:500px;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+.heading1 {
+    margin-bottom: 30px;
+}
+
+.heading2 {
+    margin-bottom: 15px;
+}
+
+.card {
+    padding: 25px;
+    width: 480px;
+}
+
+.ms-Grid-row {
+    margin-bottom: 10px;
+}
+
+#actions {
+    padding: 15px;
+}
+
+label {
+    display: block;
+    width: 110px;
+}
+
+.messagebar {
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+.messagebar[hasErrors="false"] {
+    background-color: rgb(223, 246, 221);
+}
+
+.messagebar[hasErrors="true"] {
+    background-color: rgb(253, 231, 233);
+}
+
+.message {
+    display: flex;
+    margin-top: 5px;
+}
+
+div.messagetext {
+    margin-left: 10px;
+    font-size: 12px; 
+}
+
+.successicon {
+    color: rgb(16, 124, 16);
+}
+
+.erroricon {
+    color: rgb(168, 0, 0);
+}
+
+.footer {
+    margin-top: 30px;
+    padding: 25px;
+    width: 480px;
+    background-color: #f3f2f1;
 }
