@@ -1,11 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html dir='ltr'>
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Options Page</title>
+    <title>Time Reporter Settings</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/custom-validation-methods.js"></script>
+    <script src="js/constants.js"></script>
+    <script src="js/options.js"></script>
+    <link rel="stylesheet" href="css/fabric.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <h1>Options Page</h1>
+<body class="ms-Fabric ms-bgColor-neutralLighterAlt">
+    <div class="heading1 ms-fontSize-32 ms-fontWeight-semibold">Time Reporter</div>
+    <div class="card ms-depth-8 ms-bgColor-white">
+        <div class="heading2 ms-fontSize-24 ms-fontWeight-semibold">Settings</div>
+        <div id="messagebar" class="messagebar" hidden="true"></div>
+        <div class="ms-Grid">
+            <form id="settingsForm">
+                <div class="ms-Grid-row">
+                    <div class="ms-Grid-col">
+                        <label>Min. Hours/Day:</label>
+                    </div>
+                    <div class="ms-Grid-col">
+                        <input type="text" id="minhours" name="minhours"></input>
+                    </div>
+                </div>
+                <div class="ms-Grid-row">
+                    <div class="ms-Grid-col">
+                        <label for="maxHours">Max. Hours/Day:</label>
+                    </div>
+                    <div class="ms-Grid-col">
+                        <input type="text" id="maxhours" name="maxhours"></input>
+                    </div>
+                </div>
+                <div class="ms-Grid-row">
+                    <div class="ms-Grid-col">
+                        <label for="earliestBegin">Earliest Begin:</label>
+                    </div>
+                    <div class="ms-Grid-col">
+                        <input type="text" id="earliestbegin" name="earliestbegin"></input>
+                    </div>
+                </div>
+                <div class="ms-Grid-row">
+                    <div class="ms-Grid-col">
+                        <label>Latest Begin:</label>
+                    </div>
+                    <div class="ms-Grid-col">
+                        <input type="text" id="latestbegin" name="latestbegin"></input>
+                    </div>
+                </div>
+                <div class="ms-Grid-row" id="actions">
+                    <div class="ms-Grid-col">
+                        <button type="button" id="save">Save</button>
+                    </div>
+            </form>
+                <div class="ms-Grid-col">
+                    <input type="button" id="reset" value="Reset Defaults">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="ms-fontSize-12">Feedback, issues, contributions are welcome at <a href="https://github.com/flomader/timereporter" target="_blank">https://github.com/flomader/timereporter</a></div>
+        <div class="ms-fontSize-12">Licensed under the MIT License (the "License").<div>
+    </div>
 </body>
 </html>

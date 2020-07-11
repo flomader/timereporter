@@ -1,6 +1,6 @@
 {
   "name": "TimeReporter",
-  "version": "0.0.0.2",
+  "version": "1.0.0",
   "manifest_version": 2,
   "description": "Populates work time in MSVacation WTT.",
   "page_action": {
@@ -14,15 +14,24 @@
     "128": "icons/timerecorder128x128.png"
   },
   "background": {
-    "scripts": ["js/moment.min.js", "background.js"],
+    "scripts": [
+      "js/moment.min.js", 
+      "js/constants.js",
+      "background.js"
+    ],
     "persistent": false
   },
   "options_page": "options.html",
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": [
+        "https://msvacation/*",
+        "https://timereporter.z6.web.core.windows.net/*"
+      ],
       "js": [
         "js/jquery.min.js",
+        "js/jquery.validate.min.js",
+        "js/custom-validation-methods.js",
         "js/content.js"
       ],
       "css":[
