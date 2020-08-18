@@ -1,6 +1,6 @@
 {
   "name": "TimeReporter",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "manifest_version": 2,
   "description": "Populates work time in MSVacation WTT.",
   "page_action": {
@@ -32,6 +32,8 @@
         "js/jquery.min.js",
         "js/jquery.validate.min.js",
         "js/custom-validation-methods.js",
+        "js/moment.min.js",
+        "js/constants.js",
         "js/content.js"
       ],
       "css":[

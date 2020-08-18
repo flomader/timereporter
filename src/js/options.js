@@ -25,6 +25,9 @@ $(document).ready(function(){
                 required: true,
                 time: true,
                 laterThan: '#earliestbegin'
+            },
+            weekday: {
+                required: true
             }
         },
         messages: {
@@ -49,6 +52,9 @@ $(document).ready(function(){
                 required: '"Latest Begin" is a required field.',
                 time: '"Latest Begin" must be a valid time, between 00:00 and 23:59.',
                 laterThan: '"Latest Begin" must be later than "Earliest Begin".'
+            },
+            weekday: {
+                required: 'At least one weekday must be selected.'
             }
         },
         errorElement: 'div',
@@ -92,6 +98,14 @@ $(document).ready(function(){
         {
             $('#latestbegin').val(defaultLatestBegin);
         }
+
+        if (typeof response.settings !== "undefined" && response.settings.weekdays){
+            updateWeekdaysCheckboxes(response.settings.weekdays);            
+        }
+        else
+        {
+            updateWeekdaysCheckboxes(defaultWeekdays);
+        }
     });
 
     $('#save').click(function(){
@@ -105,12 +119,18 @@ $(document).ready(function(){
             var maxHours = $('#maxhours').val();
             var earliestBegin = $('#earliestbegin').val();
             var latestBegin = $('#latestbegin').val();
+            var weekdays = [];
+
+            $('input:checkbox:checked').each(function(){
+                weekdays.push($(this).val());
+            });
             
             chrome.storage.sync.set({'settings': {
                                                     'minHours': minHours,
                                                     'maxHours': maxHours, 
                                                     'earliestBegin': earliestBegin,
-                                                    'latestBegin': latestBegin
+                                                    'latestBegin': latestBegin,
+                                                    'weekdays': weekdays
                                                 }}, function(){
                 console.log('Settings have been saved.');
             });
@@ -134,5 +154,39 @@ $(document).ready(function(){
         $('#maxhours').val(defaultMaxHours);
         $('#earliestbegin').val(defaultEarliestBegin);
         $('#latestbegin').val(defaultLatestBegin);
+        updateWeekdaysCheckboxes(defaultWeekdays);
     })
 });
+
+function updateWeekdaysCheckboxes(weekdays){
+
+    if (weekdays.includes('monday')){
+        $('#monday').prop('checked', true);
+    } else {
+        $('#monday').prop('checked', false);
+    }
+
+    if (weekdays.includes('tuesday')){
+        $('#tuesday').prop('checked', true);
+    } else {
+        $('#tuesday').prop('checked', false);
+    }
+
+    if (weekdays.includes('wednesday')){
+        $('#wednesday').prop('checked', true);
+    } else {
+        $('#wednesday').prop('checked', false);
+    }
+
+    if (weekdays.includes('thursday')){
+        $('#thursday').prop('checked', true);
+    } else {
+        $('#thursday').prop('checked', false);
+    }
+
+    if (weekdays.includes('friday')){
+        $('#friday').prop('checked', true);
+    } else {
+        $('#friday').prop('checked', false);
+    }
+}
