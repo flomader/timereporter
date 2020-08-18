@@ -21,45 +21,64 @@
             <form id="settingsForm">
                 <div class="ms-Grid-row">
                     <div class="ms-Grid-col">
-                        <label>Min. Hours/Day:</label>
+                        <label class="main">Min. Hours/Day:</label>
                     </div>
                     <div class="ms-Grid-col">
-                        <input type="text" id="minhours" name="minhours"></input>
+                        <input class="main" type="text" id="minhours" name="minhours"></input>
+                    </div>                    
+                </div>
+                <div class="ms-Grid-row">
+                    <div class="ms-Grid-col">
+                        <label class="main" for="maxHours">Max. Hours/Day:</label>
+                    </div>
+                    <div class="ms-Grid-col">
+                        <input class="main" type="text" id="maxhours" name="maxhours"></input>
                     </div>
                 </div>
                 <div class="ms-Grid-row">
                     <div class="ms-Grid-col">
-                        <label for="maxHours">Max. Hours/Day:</label>
+                        <label class="main" for="earliestBegin">Earliest Begin:</label>
                     </div>
                     <div class="ms-Grid-col">
-                        <input type="text" id="maxhours" name="maxhours"></input>
+                        <input class="main" type="text" id="earliestbegin" name="earliestbegin"></input>
                     </div>
                 </div>
                 <div class="ms-Grid-row">
                     <div class="ms-Grid-col">
-                        <label for="earliestBegin">Earliest Begin:</label>
+                        <label class="main">Latest Begin:</label>
                     </div>
                     <div class="ms-Grid-col">
-                        <input type="text" id="earliestbegin" name="earliestbegin"></input>
+                        <input class="main" type="text" id="latestbegin" name="latestbegin"></input>
                     </div>
                 </div>
                 <div class="ms-Grid-row">
                     <div class="ms-Grid-col">
-                        <label>Latest Begin:</label>
+                        <label class="main">Weekdays:</label>
                     </div>
                     <div class="ms-Grid-col">
-                        <input type="text" id="latestbegin" name="latestbegin"></input>
-                    </div>
+                        <div class="ms-Grid-col">
+                            <input type="checkbox" class="require-one" id="monday" name="weekday" value="monday" checked></input>
+                            <label for="monday" class="weekday">Mon</label>
+                            <input type="checkbox"  class="require-one" id="tuesday" name="weekday" value="tuesday" checked></input>
+                            <label for="tuesday" class="weekday">Tue</label>
+                            <input type="checkbox"  class="require-one" id="wednesday" name="weekday" value="wednesday" checked></input>
+                            <label for="wednesday" class="weekday">Wed</label>
+                            <input type="checkbox"  class="require-one" id="thursday" name="weekday" value="thursday" checked></input>
+                            <label for="thursday" class="weekday">Thu</label>
+                            <input type="checkbox" class="require-one" id="friday" name="weekday" value="friday" checked></input>
+                            <label for="friday" class="weekday">Fri</label>
+                        </div>
+                    </div>  
                 </div>
                 <div class="ms-Grid-row" id="actions">
                     <div class="ms-Grid-col">
                         <button type="button" id="save">Save</button>
-                    </div>
+                    </div>              
             </form>
-                <div class="ms-Grid-col">
-                    <input type="button" id="reset" value="Reset Defaults">
+                    <div class="ms-Grid-col">
+                        <input type="button" id="reset" value="Reset Defaults">
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
     <div class="footer">

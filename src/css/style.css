@@ -24,9 +24,18 @@ body {
     padding: 15px;
 }
 
-label {
+label.main {
     display: block;
     width: 110px;
+}
+
+label.weekday {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+input.main {
+    width: 100px;
 }
 
 .messagebar {
