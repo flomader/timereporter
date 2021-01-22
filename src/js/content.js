@@ -3,8 +3,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 
         chrome.storage.sync.get('settings', function(response){
             var weekdays;
-
-            if (response.settings.weekdays){
+            
+            if (response.settings && response.settings.weekdays){
                 weekdays = response.settings.weekdays;
             } 
             else {
